@@ -23,6 +23,7 @@ namespace WeatherApplication
             textBoxSearchLocation.Focus();
             ForecastTab.Visible = false;
             weatherHistoryButton.Visible = false;
+            labelWeatherForecast.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,11 +46,7 @@ namespace WeatherApplication
 
             ForecastTab.Visible = true;
             weatherHistoryButton.Visible = true;
-            labelWeatherForecast.Text = "WeatherForecast:";
-
-            //double t = 60.53488;
-            //var t = weather.ConsolidatedWeather[0].MinTemp;
-           // var temp = Math.Round(t, 0, MidpointRounding.ToEven).ToString();
+            labelWeatherForecast.Visible = true;
 
             printWeather(tabPage0, pictureBox0, tabPagelable0, weather.ConsolidatedWeather[0]);
             printWeather(tabPage1, pictureBox1, tabPagelable1, weather.ConsolidatedWeather[1]);
@@ -64,34 +61,18 @@ namespace WeatherApplication
             tabPage.Text = weather.ApplicableDate.ToString("ddd");
 
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox.ImageLocation = GetImage(weather.WeatherStateAbbr);
+            pictureBox.ImageLocation = _api.GetImageUrl(weather.WeatherStateAbbr);
 
-            lable.Text = $"{weather.ApplicableDate.ToString("M")}\n"
-                + $"{weather.WeatherName}\n\n"
-
-                + $"Min temperature: {repository.round(weather.MinTemp)} °C\n"
-                + $"Max temperature: {repository.round(weather.MaxTemp)} °C\n\n"
-
-                + $"Humidity: {weather.Humidity}%\n"
-                + $"Wind: {repository.round(weather.WindSpeed)} m/h\n";
-        }
-
-        public string GetImage(string search)
-        {
-            var url = "https://www.metaweather.com/static/img/weather/png/" + search + ".png";
-            return url;
+            lable.Text = repository.weatherToString(weather);
         }
 
         private void button2_Click(object sender, EventArgs e) //open form2
         {
-            //this.Hide();
-            //this.Close();
             var selectedItem = listViewOfLocations.SelectedItems[0];
             var selectedModel = (SearchModel)selectedItem.Tag;
 
             Form2 main = new Form2(selectedModel.Woeid);
             main.ShowDialog();
-            
         }
 
         private void textBoxSearchChanged(object sender, EventArgs e)
@@ -104,9 +85,6 @@ namespace WeatherApplication
                 textBoxSearchLocation.Text = textBoxSearchLocation.Text.Trim();
                 var search = textBoxSearchLocation.Text;
                 var locations = _api.GetLocations(search);
-
-            
-            label1.Text = repository.countList(search).ToString();
 
             if (!locations.Any())
             {
@@ -128,6 +106,8 @@ namespace WeatherApplication
         {
             labelLocationDescription.Text = "";
             ForecastTab.Visible = false;
+            labelWeatherForecast.Visible = false;
+            weatherHistoryButton.Visible = false;
             listViewOfLocations.Items.Clear();
             label9.Text = text;
         }

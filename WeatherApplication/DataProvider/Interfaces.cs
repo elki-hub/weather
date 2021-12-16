@@ -11,5 +11,7 @@ namespace WeatherApplication.DataProvider
         LocationModel GetByWoeid(int woeid);
         List<WeatherForecast> GetByWoeidHistory(int woeid, string date);
         List<SearchModel> GetLocations(string searchTerm);
+
+        string GetImageUrl(string abbr);
     }
 }

@@ -57,7 +57,6 @@ namespace WeatherApplication
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPagelable5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.ForecastTab.SuspendLayout();
             this.tabPage0.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox0)).BeginInit();
@@ -113,7 +112,7 @@ namespace WeatherApplication
             // 
             // weatherHistoryButton
             // 
-            this.weatherHistoryButton.Location = new System.Drawing.Point(473, 308);
+            this.weatherHistoryButton.Location = new System.Drawing.Point(425, 309);
             this.weatherHistoryButton.Margin = new System.Windows.Forms.Padding(2);
             this.weatherHistoryButton.Name = "weatherHistoryButton";
             this.weatherHistoryButton.Size = new System.Drawing.Size(106, 20);
@@ -172,7 +171,7 @@ namespace WeatherApplication
             this.ForecastTab.Location = new System.Drawing.Point(184, 155);
             this.ForecastTab.Name = "ForecastTab";
             this.ForecastTab.SelectedIndex = 0;
-            this.ForecastTab.Size = new System.Drawing.Size(399, 148);
+            this.ForecastTab.Size = new System.Drawing.Size(351, 148);
             this.ForecastTab.TabIndex = 21;
             // 
             // tabPage0
@@ -182,7 +181,7 @@ namespace WeatherApplication
             this.tabPage0.Location = new System.Drawing.Point(4, 22);
             this.tabPage0.Name = "tabPage0";
             this.tabPage0.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage0.Size = new System.Drawing.Size(391, 122);
+            this.tabPage0.Size = new System.Drawing.Size(343, 122);
             this.tabPage0.TabIndex = 0;
             this.tabPage0.Text = "tabPage0";
             this.tabPage0.UseVisualStyleBackColor = true;
@@ -349,21 +348,11 @@ namespace WeatherApplication
             this.pictureBox5.TabIndex = 23;
             this.pictureBox5.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(422, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "label1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(540, 360);
             this.Controls.Add(this.ForecastTab);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxSearchLocation);
@@ -430,7 +419,6 @@ namespace WeatherApplication
         private System.Windows.Forms.Label tabPagelable3;
         private System.Windows.Forms.Label tabPagelable4;
         private System.Windows.Forms.Label tabPagelable5;
-        private System.Windows.Forms.Label label1;
     }
 }
 

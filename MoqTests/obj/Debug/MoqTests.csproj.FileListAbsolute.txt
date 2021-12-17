@@ -107,4 +107,3 @@ D:\Desktop\dot NET\ND\MoqTests\bin\Debug\EmptyFiles.xml
 D:\Desktop\dot NET\ND\MoqTests\bin\Debug\System.Buffers.xml
 D:\Desktop\dot NET\ND\MoqTests\bin\Debug\System.Memory.xml
 D:\Desktop\dot NET\ND\MoqTests\bin\Debug\System.Numerics.Vectors.xml
-D:\Desktop\dot NET\ND\MoqTests\obj\Debug\MoqTests.csproj.CopyComplete

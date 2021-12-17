@@ -57,11 +57,18 @@ namespace WeatherApplication
                {
                     return;
                }
-                weather.MinTemp = repository.GetLower(weather.MinTemp, i.MinTemp);
-
-                weather.MaxTemp = repository.getHigher(weather.MaxTemp, i.MaxTemp);
-
-                weather.WindSpeed = repository.getHigher(weather.WindSpeed, i.WindSpeed);
+               if(weather.MinTemp < i.MinTemp)
+                {
+                    weather.MinTemp = i.MinTemp;
+                }
+                if (weather.MaxTemp < i.MaxTemp)
+                {
+                    weather.MaxTemp = i.MaxTemp;
+                }
+                if (weather.WindSpeed < i.WindSpeed)
+                {
+                    weather.WindSpeed = i.WindSpeed;
+                }
                
             }
 
